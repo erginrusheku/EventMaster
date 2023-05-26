@@ -1,17 +1,14 @@
-package EventMasterApp.controller;
+package eventmasterapp.controller;
 
-import EventMasterApp.model.Event;
-import EventMasterApp.service.EventService;
+import eventmasterapp.model.Event;
+import eventmasterapp.service.EventService;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
 @RequestMapping("/events")
 public class EventController {
-
     private final EventService eventService;
-
     public EventController(EventService eventService) {
         this.eventService = eventService;
     }
