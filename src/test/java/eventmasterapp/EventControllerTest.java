@@ -32,7 +32,8 @@ public class EventControllerTest {
         List<Event> events = Arrays.asList(new Event(1L, "Event 1", "Description 1"), new Event(2L, "Event 2", "Description 2"));
         Mockito.when(eventService.getAllEvents()).thenReturn(events);
 
-        mockMvc.perform(MockMvcRequestBuilders.get("/events")).andExpect(MockMvcResultMatchers.status().isOk())
+        mockMvc.perform(MockMvcRequestBuilders.get("/events"))
+                .andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].id").value(1))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].name").value("Event 1"))
                 .andExpect(MockMvcResultMatchers.jsonPath("$[0].description").value("Description 1"))
